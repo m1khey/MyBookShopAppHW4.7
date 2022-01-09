@@ -29,7 +29,15 @@
           </li>
           <li class="menu-item"><a class="menu-link" href="/faq.html" th:href="@{/faq}">Помощь</a>
           </li>
-          <li class="menu-item"><a class="menu-link" href="/contacts.html">Контакты</a>
+          <li class="menu-item"><a class="menu-link" href="/contacts.html" th:href="@{/contacts}" >Контакты</a>
+          </li>
+          <li class="menu-item">
+            <span>Выбор языка</span>
+            <select id="locales">
+              <option value=" "></option>
+              <option value="en">English</option>
+              <option value="ru">Русский</option>
+            </select>
           </li>
 
         </ul>
