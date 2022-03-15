@@ -1,8 +1,8 @@
-package com.example.MyBookShopApp.data;
+package com.example.MyBookShopApp.repositoryes;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import skbx.example.struct.Book;
 
 import java.util.List;
 
