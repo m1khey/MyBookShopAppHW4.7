@@ -41,3 +41,4 @@ insert into books (id, price, price_old, title, author_id) values (18, 2684, 167
 insert into books (id, price, price_old, title, author_id) values (19, 772, 3033, 'It', 18);
 insert into books (id, price, price_old, title, author_id) values (20, 725, 3544, 'Alphazap', 1);
 insert into books (id, price, price_old, title, author_id) values (21, 717, 3205, 'Bytecard', 5);
+

@@ -27,7 +27,7 @@ public class UserContactEntity {
     @Column(columnDefinition = "INT")
     private int codeTrails;
 
-    @Column(columnDefinition = "TIMESTAMP")
+    @Column(columnDefinition = "DATE")
     private LocalDateTime codeTime;
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
