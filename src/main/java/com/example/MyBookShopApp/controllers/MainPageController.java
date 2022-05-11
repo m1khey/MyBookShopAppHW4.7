@@ -1,5 +1,8 @@
 package com.example.MyBookShopApp.controllers;
 
+import com.example.MyBookShopApp.data.RecommendedBooksPageDto;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import skbx.example.struct.Book;
 import com.example.MyBookShopApp.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +24,19 @@ public class MainPageController {
 
     @ModelAttribute("recommendedBooks")
     public List<Book> recommendedBooks(){
-        return bookService.getBooksData();
+        return bookService.getPageOfRecomendedBooks(0,6).getContent();
     }
 
     @GetMapping("/")
     public String mainPage(){
         return "index";
+    }
+
+    @GetMapping("/books/recommended")
+    @ResponseBody
+    public RecommendedBooksPageDto getBooksPage(@RequestParam("offset") Integer offset,
+                                                @RequestParam("limit") Integer limit) {
+        return new RecommendedBooksPageDto(bookService.getPageOfRecomendedBooks(offset,limit).getContent());
     }
 
 }

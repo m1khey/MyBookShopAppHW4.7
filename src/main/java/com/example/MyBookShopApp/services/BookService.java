@@ -2,6 +2,9 @@ package com.example.MyBookShopApp.services;
 
 import com.example.MyBookShopApp.repositoryes.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import skbx.example.struct.Book;
 
@@ -45,6 +48,11 @@ public class BookService {
 
     public List<Book> getBestsellers(){
         return bookRepository.getBestseller();
+    }
+
+    public Page<Book> getPageOfRecomendedBooks(Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset,limit);
+        return bookRepository.findAll(nextPage);
     }
 
 
