@@ -1,6 +1,8 @@
 package com.example.MyBookShopApp.repositoryes;
 
 import org.hibernate.cache.spi.entry.StructuredCacheEntry;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import skbx.example.struct.Book;
@@ -28,6 +30,8 @@ public interface BookRepository extends JpaRepository<Book,Integer> {
 
     @Query(value="SELECT * FROM books WHERE discount = (SELECT MAX(discount) FROM books)", nativeQuery = true)
     List<Book> getBooksWithMaxDiscount();
+
+    Page<Book> findBookByTitleContaining(String bookTitle, Pageable nextPage);
 
 
 
